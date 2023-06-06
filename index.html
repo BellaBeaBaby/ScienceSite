@@ -10,36 +10,32 @@
             font-family: Arial, sans-serif;
         }
         
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
+        .sidebar {
+            width: 0;
+            height: 100vh;
+            background-color: #222;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding: 20px;
         }
         
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #444;
-            color: #fff;
-            padding: 10px;
+        .show-sidebar {
+            width: 250px;
         }
         
         .nav-links {
             display: flex;
+            flex-direction: column;
             list-style: none;
             margin: 0;
             padding: 0;
         }
         
         .nav-links li {
-            margin-right: 15px;
+            margin-bottom: 10px;
         }
         
         .nav-links a {
@@ -47,49 +43,38 @@
             text-decoration: none;
         }
         
-        @media only screen and (max-width: 768px) {
+        .menu-icon {
+            display: block;
+            cursor: pointer;
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        @media only screen and (min-width: 768px) {
             .menu-icon {
-                display: block;
-            }
-            
-            .nav-links {
                 display: none;
-                flex-direction: column;
-                text-align: center;
-                padding: 0;
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
-            .showing {
-                display: block;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Science Informational Site</h1>
-    </header>
-    
-    <nav class="navbar">
+    <div class="sidebar">
         <div class="menu-icon">&#9776;</div>
         <ul class="nav-links">
-            <li><a href="https://Google.com/">Test</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Articles</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-    </nav>
+    </div>
     
     <script>
         const menuIcon = document.querySelector(".menu-icon");
-        const navLinks = document.querySelector(".nav-links");
+        const sidebar = document.querySelector(".sidebar");
 
         menuIcon.addEventListener("click", () => {
-            navLinks.classList.toggle("showing");
+            sidebar.classList.toggle("show-sidebar");
         });
     </script>
 </body>
