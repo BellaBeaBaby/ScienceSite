@@ -1,32 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>White Square on Black Background</title>
+    <title>Science Informational Site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        html, body {
-            height: 100%;
-            overflow: hidden;
-        }
-        
         body {
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
         
-        .white-square {
-            width: 80vw;
-            max-width: 300px;
-            height: 80vw;
-            max-height: 300px;
-            background-color: white;
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links li {
+            margin-right: 15px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                padding: 0;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .showing {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="white-square"></div>
+    <header class="header">
+        <h1>Science Informational Site</h1>
+    </header>
+    
+    <nav class="navbar">
+        <div class="menu-icon">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="https://Google.com/">Test</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <script>
+        const menuIcon = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuIcon.addEventListener("click", () => {
+            navLinks.classList.toggle("showing");
+        });
+    </script>
 </body>
 </html>
