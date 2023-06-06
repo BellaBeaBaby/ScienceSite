@@ -44,23 +44,27 @@
         }
         
         .menu-icon {
-            display: block;
+            display: none;
             cursor: pointer;
             font-size: 20px;
             color: #fff;
             margin-bottom: 20px;
         }
         
-        @media only screen and (min-width: 768px) {
+        @media only screen and (max-width: 768px) {
             .menu-icon {
-                display: none;
+                display: block;
+            }
+            
+            .show-sidebar {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
-        <div class="menu-icon">&#9776;</div>
+        <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -70,12 +74,10 @@
     </div>
     
     <script>
-        const menuIcon = document.querySelector(".menu-icon");
-        const sidebar = document.querySelector(".sidebar");
-
-        menuIcon.addEventListener("click", () => {
+        function toggleSidebar() {
+            const sidebar = document.querySelector(".sidebar");
             sidebar.classList.toggle("show-sidebar");
-        });
+        }
     </script>
 </body>
 </html>
