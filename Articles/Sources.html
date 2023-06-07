@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    a:link {
+        color: fff;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: pink;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+    /* Style the sidebar */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    /* Style the sidebar links */
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    /* Change the color of the sidebar links on hover */
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+
+    /* Style the button that opens the sidebar */
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Position and style the close button (top right corner) */
+    .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* Style the close button on hover */
+    .closebtn:hover {
+      color: white;
+    }
+
+    /* Set body background to match the article */
+    body {
+      background-color: #333;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+
+      .sidebar a {
+        font-size: 18px;
+      }
+
+      .openbtn {
+        display: inline-block;
+        margin-bottom: 0;
+      }
+
+      /* Adjust image and text size for smaller screens */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- The sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="Résumé.html">Résumé</a>
+    <a href="Comment%20ça%20fonctionne.html">Comment ça fonctionne</a>
+    <a href="Avantages.html">Avantages</a>
+    <a href="#">Sources</a>
+  </div>
+  
+  <!-- The button used to open the sidebar -->
+  <button class="openbtn" onclick="openNav()">☰ Savoir Plus</button>
+
+    <div>
+        <h1>Sources</h1>
+            <h3><a href="https://www.nationalgeographic.fr/environnement/tout-comprendre-sur-lenergie-geothermique" target="_blank">Tout comprendre sur : l'énergie géothermique</a></h3>
+            <h3><a href="https://www.alloprof.qc.ca/fr/eleves/bv/sciences/les-manifestations-naturelles-de-l-energie-s1382#l-energie-geothermique" target="_blank">Les manifestations de l'énergie dans la lithosphère</a></h3>
+            <h3><a href="https://www.ecohabitation.com/guides/1558/comprendre-la-geothermie/" target="_blank">COMPRENDRE LA GÉOTHERMIE</a></h3>
+            <h3><a href="https://www.edf.fr/groupe-edf/espaces-dedies/l-energie-de-a-a-z/tout-sur-l-energie/produire-de-l-electricite/qu-est-ce-que-la-geothermie" target="_blank">Qu'est-ce que la géothermie ?</a></h3>
+    </div>
+  
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+
+    // Check screen width on page load
+    window.addEventListener('load', function() {
+      if (window.innerWidth <= 768) {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    });
+  </script>
+</body>
+</html>

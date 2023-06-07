@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Style the sidebar */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    /* Style the sidebar links */
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    /* Change the color of the sidebar links on hover */
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+
+    /* Style the button that opens the sidebar */
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #111;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Position and style the close button (top right corner) */
+    .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* Style the close button on hover */
+    .closebtn:hover {
+      color: white;
+    }
+
+    /* Set body background to match the article */
+    body {
+      background-color: #333;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+
+      .sidebar a {
+        font-size: 18px;
+      }
+
+      .openbtn {
+        display: inline-block;
+        margin-bottom: 0;
+      }
+
+      /* Adjust image and text size for smaller screens */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- The sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">Résumé</a>
+    <a href="Comment%20ça%20fonctionne.html">Comment ça fonctionne</a>
+    <a href="Avantages.html">Avantages</a>
+    <a href="Sources.html">Sources</a>
+  </div>
+  
+  <!-- The button used to open the sidebar -->
+  <button class="openbtn" onclick="openNav()">☰ Savoir Plus</button>
+  
+  <!-- Main Article -->
+  <div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/NesjavellirPowerPlant_edit2.jpg" alt="Geothermal Power Plant">
+    <h1>La Géothermie : Une Source d'Énergie Renouvelable</h1>
+    <p>La géothermie est une source d'énergie renouvelable provenant de la chaleur interne de la Terre. Ce n'est pas seulement une merveille naturelle, mais aussi une source d'énergie propre, durable et abondante. Imaginez une source d'énergie qui ne se tarit jamais, qui ne dépend pas des conditions météorologiques et qui n'émet pas de gaz à effet de serre. C'est ce que la géothermie nous offre !</p>
+    <p>L'énergie géothermique est utilisée depuis des millénaires par l'humanité, des bains thermaux de l'époque romaine aux systèmes de chauffage modernes. Aujourd'hui, elle est utilisée non seulement pour le chauffage et le refroidissement, mais aussi pour produire de l'électricité, alimentant ainsi des millions de foyers dans le monde. La France, riche en ressources géothermiques, est un des leaders européens dans ce domaine.</p>
+  </div>
+  
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+
+    // Check screen width on page load
+    window.addEventListener('load', function() {
+      if (window.innerWidth <= 768) {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+    });
+  </script>
+</body>
+</html>
